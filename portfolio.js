@@ -27,6 +27,18 @@ document.querySelectorAll('.arrows button').forEach(b => b.addEventListener('cli
 strip.addEventListener('scroll', syncArrows, { passive: true });
 syncArrows();
 
+// Moments: jump straight to a year
+document.querySelectorAll('.strip .year span').forEach(sp => {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.textContent = sp.textContent;
+  b.addEventListener('click', () => {
+    const pad = parseFloat(getComputedStyle(strip).paddingInlineStart) || 0;
+    strip.scrollTo({ left: sp.closest('.year').offsetLeft - pad, behavior: reduce ? 'auto' : 'smooth' });
+  });
+  document.querySelector('.jumps').append(b);
+});
+
 // Moments: video pop-up
 const dlg = document.getElementById('player');
 const vid = document.getElementById('player-video');
