@@ -26,20 +26,21 @@ img{ display:block; max-width:100%; }
 }
 .meta nav{ display:flex; gap:1.4rem; }
 .meta nav a{ text-decoration:none; }
+.sheet > .meta{ font-size:clamp(0.95rem,1.25vw,1.15rem); letter-spacing:0.07em; color:var(--ink); }
 
 /* ---------- sticky top bar ---------- */
 .topbar{
   position:sticky; top:0; z-index:60;
   display:flex; justify-content:space-between; align-items:center; gap:1.2rem;
   background:var(--paper); border-bottom:1px solid var(--rule);
-  padding:0.85rem clamp(1rem,4vw,3.5rem);
+  padding:1.35rem clamp(1rem,4vw,3.5rem);
   font-family:var(--display); font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
 }
 .topbar a{ text-decoration:none; white-space:nowrap; }
 .topbar .brand{ color:var(--ink); }
 .topbar nav{ display:flex; gap:1.4rem; color:var(--ink-2); }
 .topbar .top-contact{ display:flex; gap:1.4rem; color:var(--ink-2); }
-section[id]{ scroll-margin-top:3.4rem; }
+section[id]{ scroll-margin-top:4.4rem; }
 
 .label{ font-family:var(--display); font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-2); }
 .small{ font-size:1.05rem; line-height:1.6; color:var(--ink); max-width:60ch; margin:0; }
@@ -48,7 +49,7 @@ section[id]{ scroll-margin-top:3.4rem; }
 .press:active{ transform:scale(0.97); }
 
 /* ---------- hero ---------- */
-.hero{ display:grid; grid-template-columns:2fr 5fr 5fr; gap:clamp(1.2rem,3vw,2.5rem); align-items:start; }
+.hero{ display:grid; grid-template-columns:5fr 5fr auto; gap:clamp(1.2rem,3vw,2.5rem); align-items:start; }
 .statement{
   font-family:var(--display); font-weight:800; font-size:clamp(2rem,3.9vw,3.4rem);
   line-height:1.02; letter-spacing:-0.035em; margin:0 0 2rem; text-wrap:balance;
@@ -64,7 +65,7 @@ section[id]{ scroll-margin-top:3.4rem; }
 .photo-wrap{ position:relative; padding-top:4.8rem; }
 .photo-wrap .shot{ position:relative; }
 .photo-wrap img{ width:100%; aspect-ratio:1/1; object-fit:cover; object-position:50% 40%; }
-.badge{ position:absolute; bottom:-2.4rem; right:-2.4rem; width:7.5rem; height:7.5rem; }
+.badge{ position:absolute; bottom:-2.4rem; left:-2.4rem; width:7.5rem; height:7.5rem; }
 
 /* hand-written annotation pointing at Cal */
 .note{ position:absolute; top:0; left:0; right:0; height:100%; pointer-events:none; }
@@ -90,7 +91,7 @@ section[id]{ scroll-margin-top:3.4rem; }
 @keyframes spin{ to{ transform:rotate(360deg); } }
 
 .vname{
-  writing-mode:vertical-rl; transform:rotate(180deg); font-family:var(--display); font-weight:800; color:var(--red);
+  writing-mode:vertical-rl; font-family:var(--display); font-weight:800; color:var(--red);
   font-size:clamp(4rem,9.5vw,8.5rem); line-height:0.82; letter-spacing:-0.04em; margin:0; justify-self:start;
   opacity:0; transition:opacity 700ms var(--ease-out) 150ms;
 }
@@ -98,7 +99,7 @@ section[id]{ scroll-margin-top:3.4rem; }
 
 /* ---------- shared heading ---------- */
 .head{ display:flex; align-items:flex-end; gap:1.2rem; margin:0 0 clamp(2rem,4vw,3rem); flex-wrap:wrap; }
-.big{ font-family:var(--display); font-weight:800; color:var(--red); font-size:clamp(3.4rem,9vw,8rem); line-height:0.85; letter-spacing:-0.045em; margin:0; }
+.big{ font-family:var(--display); font-weight:800; color:var(--red); font-size:clamp(3rem,8vw,7rem); line-height:0.85; letter-spacing:-0.045em; margin:0; }
 .num{ font-family:var(--display); font-weight:800; color:var(--red); font-size:clamp(2.4rem,5vw,4.4rem); line-height:0.85; letter-spacing:-0.04em; }
 
 /* ---------- the one reading pattern: label | content ---------- */
@@ -137,15 +138,8 @@ section[id]{ scroll-margin-top:3.4rem; }
 
 /* ---------- about ---------- */
 .about{ display:grid; grid-template-columns:5fr 7fr; gap:clamp(1.5rem,4vw,3.5rem); align-items:start; }
-.cutout{
-  position:relative; aspect-ratio:4/5; background:var(--paper-2); overflow:hidden;
-  display:flex; align-items:flex-end; justify-content:center;
-}
-.cutout::before{
-  content:''; position:absolute; left:50%; top:44%; transform:translate(-50%,-50%);
-  width:64%; aspect-ratio:1; border-radius:50%; background:var(--red);
-}
-.cutout img{ position:relative; width:94%; object-fit:contain; }
+.cutout{ display:flex; justify-content:center; border-bottom:1px solid var(--ink); }
+.cutout img{ width:100%; max-width:34rem; height:auto; }
 .about .story{ margin-bottom:2.2rem; }
 .yr{ font-family:var(--display); font-weight:800; font-size:1.05rem; font-variant-numeric:tabular-nums; }
 
