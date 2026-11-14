@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-14T09:41:25.445Z",
+        "reason": "user approved: Alex chose the warm paper background from his own reference decks and approved the design (Nov 2026)"
+      }
+    ]
+  }
+}

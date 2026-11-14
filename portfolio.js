@@ -42,13 +42,24 @@ document.querySelectorAll('.strip .year span').forEach(sp => {
 // Moments: video pop-up
 const dlg = document.getElementById('player');
 const vid = document.getElementById('player-video');
+const status = document.getElementById('player-status');
+const say = msg => { status.textContent = msg; };
 document.querySelectorAll('[data-video]').forEach(btn => btn.addEventListener('click', () => {
+  say('Loading video…');
   vid.src = btn.dataset.video;
   document.getElementById('player-link').href = btn.dataset.post;
   dlg.showModal();
-  vid.play().catch(() => {});
+  // Autoplay can be refused by the browser; the controls stay available, so just prompt.
+  vid.play().catch(err => { if (err && err.name === 'NotAllowedError') say('Press play to start.'); });
 }));
+vid.addEventListener('waiting', () => say('Loading video…'));
+vid.addEventListener('playing', () => say(''));
+vid.addEventListener('canplay', () => { if (vid.paused) say('Press play to start.'); });
+vid.addEventListener('error', () => {
+  if (!vid.getAttribute('src')) return;
+  say("This video couldn't load here. You can watch it on the original post instead.");
+});
 const closePlayer = () => dlg.close();
 document.getElementById('player-close').addEventListener('click', closePlayer);
 dlg.addEventListener('click', e => { if (e.target === dlg) closePlayer(); });
-dlg.addEventListener('close', () => { vid.pause(); vid.removeAttribute('src'); vid.load(); });
+dlg.addEventListener('close', () => { vid.pause(); vid.removeAttribute('src'); vid.load(); say(''); });

@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
@@ -24,19 +25,35 @@
 <header class="topbar">
   <a class="brand press" href="#top">Alex Chavez Gamarra</a>
   <nav><a href="#work">Work</a><a href="#about">About</a><a href="#moments">Moments</a><a href="#contact">Contact</a></nav>
-  <div class="top-contact"><a href="mailto:hello@alexchavez.space">hello@alexchavez.space</a><a class="lk" href="https://www.linkedin.com/in/alex-chavez-gamarra/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+  <div class="top-contact"><a href="mailto:hello@alexchavez.space" aria-label="Email hello@alexchavez.space"><span class="em-full">hello@alexchavez.space</span><span class="em-short">Email</span></a><a class="lk" href="https://www.linkedin.com/in/alex-chavez-gamarra/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
 </header>
 
 <!-- HERO -->
 <section class="sheet" id="top">
   <div class="hero">
-    <div>
+    <div class="hero-text">
       <h1 class="statement rv">i turn messy real&#8209;world problems into software people
         <span class="circled">actually use.<svg viewBox="0 0 220 70" aria-hidden="true"><path d="M14 40 C 6 18, 70 6, 128 8 C 196 10, 222 30, 200 50 C 176 68, 70 66, 30 54 C 8 46, 10 26, 48 16"/></svg></span>
       </h1>
-      <p class="small rv">Digital Transformation &amp; AI Integration Engineer. Right now I'm leading a three‑year Knowledge Transfer Partnership at ECAM Engineering, bringing AI and live data onto the floor of a precision metal factory in Staffordshire.</p>
-      <p class="small rv">Before that: a live bus‑tracking system for Lima, tools used across 250+ university modules, and a First Class degree in Computer Science.</p>
-      <div class="links rv"><a class="press" href="#work">See the work ↓</a><a class="press" href="#contact">Get in touch</a></div>
+      <p class="small rv">Digital Transformation &amp; AI Integration Engineer. By day I'm leading a three‑year project at ECAM Engineering, bringing AI and live data onto the floor of a precision metal factory in Staffordshire.</p>
+      <p class="small rv">Alongside that, I take on a few freelance projects for small businesses. Before this: a bus‑tracking app tested on the streets of Lima, tools used across 250+ university modules, and a First Class degree in Computer Science.</p>
+      <nav class="hero-offers rv" aria-labelledby="offers-title">
+        <p class="label" id="offers-title">What I can build for you</p>
+        <ul>
+          <li><a href="#build-sheet"><span class="arr" aria-hidden="true">→</span>Replace a spreadsheet</a></li>
+          <li><a href="#build-ai"><span class="arr" aria-hidden="true">→</span>An AI assistant for your documents</a></li>
+          <li><a href="#build-numbers"><span class="arr" aria-hidden="true">→</span>See your numbers in one place</a></li>
+          <li><a href="#build-app"><span class="arr" aria-hidden="true">→</span>An app from an idea</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-cta rv">
+        <p class="cta-ask">Have a project in mind? Tell me about it.</p>
+        <div class="cta-row">
+          <a class="cta-email press" href="mailto:hello@alexchavez.space">Email hello@alexchavez.space <span aria-hidden="true">→</span></a>
+          <a class="cta-li" href="https://www.linkedin.com/in/alex-chavez-gamarra/" target="_blank" rel="noopener">or message me on LinkedIn ↗</a>
+        </div>
+      </div>
     </div>
 
     <div class="photo-wrap rv">
@@ -57,9 +74,28 @@
   </div>
 </section>
 
+<!-- WHAT I CAN BUILD -->
+<section class="sheet" id="build">
+  <div class="meta"><span>For small businesses</span><span>p. 02</span></div>
+  <div class="build">
+    <h2 class="big rv">what i can build <span class="underlined">for you<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 18 C 60 8, 120 26, 180 14 S 270 10, 296 16"/></svg></span></h2>
+    <div class="spec rv">
+      <div class="spec-row" id="build-sheet"><span class="label">Replace a spreadsheet</span>
+        <p class="small">A simple app or tracker your team actually uses, instead of the shared spreadsheet everyone is scared to touch. At Birmingham City University I replaced manual submission tracking across 250 modules this way. <a class="proof" href="#health-check">See it ↓</a></p></div>
+      <div class="spec-row" id="build-ai"><span class="label">An AI assistant</span>
+        <p class="small">An assistant that answers questions from your own documents, policies or product information, so you stop answering the same ones by hand. I've built these for 500+ students. <a class="proof" href="#chatbots">See it ↓</a></p></div>
+      <div class="spec-row" id="build-numbers"><span class="label">See your numbers</span>
+        <p class="small">One place that pulls your figures together, so you can see what's happening without chasing people for updates. The same kind of tracking I built for university staff. <a class="proof" href="#health-check">See it ↓</a></p></div>
+      <div class="spec-row" id="build-app"><span class="label">An app from an idea</span>
+        <p class="small">A mobile or web app, from first sketch to something real people use. CombiLive started as an idea about Lima's buses and has been tested on its streets. <a class="proof" href="#work">See it ↓</a></p></div>
+    </div>
+    <p class="small build-note rv">Not sure which fits? <a href="mailto:hello@alexchavez.space">Email me a few lines about the problem</a> and I'll tell you honestly whether I can help.</p>
+  </div>
+</section>
+
 <!-- WORK -->
 <section class="sheet" id="work">
-  <div class="meta"><span>Selected work</span><span>p. 02</span></div>
+  <div class="meta"><span>Selected work</span><span>p. 03</span></div>
 
   <div class="head rv"><span class="num">1.</span><h2 class="big">combilive</h2></div>
 
@@ -86,8 +122,8 @@
   <div class="more">
     <span class="label rv">Other projects</span>
     <div class="rows">
-      <div class="row rv"><span class="n">2.</span><h3>academic chatbots</h3><p>Multi‑agent AI assistants that answer course questions for 500+ students, grounded in the university's own material.</p><span class="label tag">AI · GPT · Pinecone</span></div>
-      <div class="row rv"><span class="n">3.</span><h3>assessment health check</h3><p>A Power Apps tool that tracks submissions across 250 modules, about 30% faster than the old process.</p><span class="label tag">Power Apps · Placement</span></div>
+      <div class="row rv" id="chatbots"><span class="n">2.</span><h3>academic chatbots</h3><p>AI assistants that answer course questions for 500+ students, using the university's own material so the answers stay accurate.</p><span class="label tag">AI assistant</span></div>
+      <div class="row rv" id="health-check"><span class="n">3.</span><h3>assessment health check</h3><p>Replaced manual tracking of student submissions with one app covering 250 modules. Staff keep on top of deadlines about 30% more efficiently than before.</p><span class="label tag">Internal tool · Power Apps</span></div>
       <div class="row rv"><span class="n">4.</span><h3>tutor allocation</h3><p>A two‑phase matching algorithm that pairs 2,500+ students with tutors by preference and capacity.</p><span class="label tag">Python · Algorithms</span></div>
       <div class="row rv"><span class="n">5.</span><h3>exhibitly</h3><p>An app concept connecting West Midlands artists with cafés and venues that want their work on the walls.</p><span class="label tag">UX · Figma</span></div>
     </div>
@@ -96,11 +132,11 @@
 
 <!-- ABOUT -->
 <section class="sheet" id="about">
-  <div class="meta"><span>About</span><span>p. 03</span></div>
+  <div class="meta"><span>About</span><span>p. 04</span></div>
   <div class="about">
-    <div class="cutout rv">
-      <img src="assets/images/alex-chavez.png" alt="Portrait of Alex Chavez Gamarra">
-    </div>
+    <figure class="about-photo rv">
+      <img src="assets/images/graduation.jpg" alt="Alex in his graduation gown and cap beside the canal in Birmingham" loading="lazy">
+    </figure>
     <div>
       <h2 class="big rv" style="margin-bottom:2rem">about me</h2>
       <div class="story rv">
@@ -111,6 +147,7 @@
         <div class="spec-row"><span class="yr">2022</span><p class="small">Lima → Birmingham. Started a BSc in Computer Science at BCU.</p></div>
         <div class="spec-row"><span class="yr">2023</span><p class="small">Best Entrepreneurial Project, BCU Innovation Festival.</p></div>
         <div class="spec-row"><span class="yr">2024</span><p class="small">4th of 100+ in the Santander pitch contest. BCU ambassador at Wuhan Textile University, China. Started my placement as a systems developer.</p></div>
+        <div class="spec-row"><span class="yr">2025</span><p class="small">Became a technical teaching assistant in Computing at BCU. Finished my placement year building tools for staff and students.</p></div>
         <div class="spec-row"><span class="yr">2026</span><p class="small">First Class Honours (78.48%). Cal Henderson Seed Fund. Joined ECAM Engineering as a KTP Associate and moved to Stoke-on-Trent.</p></div>
       </div>
     </div>
@@ -119,7 +156,7 @@
 
 <!-- MOMENTS -->
 <section class="sheet" id="moments">
-  <div class="meta"><span>Moments</span><span>p. 04</span></div>
+  <div class="meta"><span>Moments</span><span>p. 05</span></div>
   <div class="strip-intro">
     <h2 class="big rv">moments</h2>
     <div class="strip-tools rv">
@@ -298,16 +335,18 @@
 
 <dialog class="player" id="player" aria-label="Video player">
   <video id="player-video" controls playsinline preload="none"></video>
+  <p class="player-status" id="player-status" role="status" aria-live="polite"></p>
   <div class="player-bar"><a id="player-link" href="#" target="_blank" rel="noopener">Open the original ↗</a><button type="button" id="player-close">Close</button></div>
 </dialog>
 
 <!-- CONTACT -->
 <section class="sheet" id="contact">
-  <div class="meta"><span>Contact</span><span>p. 05</span></div>
+  <div class="meta"><span>Contact</span><span>p. 06</span></div>
   <div class="contact">
     <h2 class="big rv">let's build something.</h2>
     <div class="rv">
-      <p class="small">Got a process that's held together with spreadsheets, or an idea that needs to become a real app? Tell me about it. I'm based in the West Midlands, UK, and happy to work remotely.</p>
+      <p class="small">Got a process that's held together with spreadsheets, or an idea that needs to become a real app? Email me a few lines: what you do now, what's getting in the way, and roughly when you'd like it sorted.</p>
+      <p class="small">I'll reply with honest thoughts on whether I can help. Every project is quoted individually. I'm based in the West Midlands, UK, and happy to work remotely.</p>
       <div class="links"><a class="press" href="mailto:hello@alexchavez.space">hello@alexchavez.space</a><a class="press" href="https://www.linkedin.com/in/alex-chavez-gamarra/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     </div>
   </div>
