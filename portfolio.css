@@ -149,8 +149,9 @@ section[id]{ scroll-margin-top:4.4rem; }
 /* Photo credit: quiet, appears on hover; the footer carries the always-visible credit */
 .credit{
   position:absolute; top:0.7rem; right:0.7rem; padding:0.35rem 0.6rem; background:rgba(27,26,23,0.72); color:var(--paper);
-  font-family:var(--display); font-weight:600; font-size:0.72rem; letter-spacing:0.04em; opacity:0; transition:opacity 200ms ease; pointer-events:none;
+  font-family:var(--display); font-weight:600; font-size:0.8rem; letter-spacing:0.04em; opacity:0; transition:opacity 200ms ease; pointer-events:none;
 }
+footer.meta{ font-size:0.8rem; }
 footer.meta a{ text-decoration:underline; text-underline-offset:0.2em; }
 .badge::before{ content:''; position:absolute; inset:-5%; background:var(--paper); border-radius:50%; border:1px solid var(--rule); box-shadow:0 2px 14px rgba(27,26,23,0.14); }
 .badge .dot{ position:absolute; inset:28%; background:var(--red); border-radius:50%; }

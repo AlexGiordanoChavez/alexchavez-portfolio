@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-11-14T09:41:25.445Z",
         "reason": "user approved: Alex chose the warm paper background from his own reference decks and approved the design (Nov 2026)"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "privacy.html"
+        ],
+        "createdAt": "2026-11-15T13:44:53.405Z",
+        "reason": "user approved: same warm paper background Alex chose for the main site (Nov 2026); privacy page shares portfolio.css"
       }
     ]
   }
