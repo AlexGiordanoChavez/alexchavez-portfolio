@@ -1,0 +1,41 @@
+# Weekly refresh of the LinkedIn reaction/comment counts shown in the Moments section.
+# Runs on GitHub's servers: no computer, VS Code or Claude needed, and no AI tokens used.
+# Only commits (and so only redeploys on Netlify) when at least one number changed.
+name: Refresh LinkedIn counts
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # every Monday at 07:00 UTC
+  workflow_dispatch:       # also lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch latest counts
+        run: node scripts/refresh-counts.mjs data/posts.json
+
+      - name: Rebuild the Moments cards
+        run: node scripts/build-moments.mjs data/posts.json index.html assets/moments/ all
+
+      - name: Commit and push if anything changed
+        run: |
+          if git diff --quiet; then
+            echo "No counts changed; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/posts.json index.html
+          git commit -m "Refresh LinkedIn reaction counts"
+          git push
