@@ -41,7 +41,9 @@ const THUMB = {
   '302272': { file: '302272-poster.jpg', style: 'object-position:20% 50%' },
 };
 // video files that replace the downloaded LinkedIn copy
-const VIDEO = { '694016': 'bcu-film.mp4' };
+const VIDEO = {};
+// videos owned by someone else: never hosted here, the card links to the original post instead
+const LINK_ONLY = new Set(['694016']); // BCU's CombiLive film (BCU copyright)
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const month = d => new Date(d + 'T12:00:00Z').toLocaleString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
@@ -56,7 +58,7 @@ for (const p of posts) {
 
   const th = THUMB[key];
   const videoFile = VIDEO[key] ?? p.videoFile;
-  const local = videoFile && (localVideos === null || localVideos.has(key));
+  const local = videoFile && !LINK_ONLY.has(key) && (localVideos === null || localVideos.has(key));
   const playCls = th?.poster ? 'play low' : 'play';
   const still = (fallback, altText) => th
     ? `<img src="${prefix}${th.file}" alt="${esc(altText)}" loading="lazy" style="${th.style}">`
